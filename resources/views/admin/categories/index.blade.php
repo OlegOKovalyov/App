@@ -1,16 +1,12 @@
 @extends('admin.layouts.app_admin')
-
 @section('content')
-
 <div class="container">
 	@component('admin.components.breadcrumb')
 		@slot('title') Category List @endslot
 		@slot('parent') Home @endslot
 		@slot('active') Categories @endslot
 	@endcomponent
-
 	<hr>
-
 	<a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i> Create Category</a>
 	<table class="table table-striped">
 		<thead>
@@ -44,5 +40,4 @@
 		</tfoot>		
 	</table>
 </div>
-
 @endsection 
