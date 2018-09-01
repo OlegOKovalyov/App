@@ -54,6 +54,12 @@ Route::get('hello', function () {
     return view('hello', compact('tasks'));
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function() {
+    Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+});
